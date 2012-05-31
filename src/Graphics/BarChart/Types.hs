@@ -45,7 +45,7 @@ data Block a = Value a | Interval { mean :: a, lower :: a, upper :: a }
 
 -- | Instances of this class can be depicted in bar charts.
 -- 
-class Num a => Measurable a where
+class (Show a, Num a) => Measurable a where
 
   -- | Measures the given value to figure out the correponding height
   --   of the bar.
